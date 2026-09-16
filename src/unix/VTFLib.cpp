@@ -9,6 +9,10 @@
  * version.
  */
 
+#ifdef USE_STB_DXT
+#define STB_DXT_IMPLEMENTATION
+#include "stb_dxt.h"
+#endif
 #include "../VTFLib.h"
 #include "../VTFFile.h"
 #include "../VMTFile.h"
