@@ -67,29 +67,10 @@
 #	pragma warning(default: 4018)
 #endif
 
-#ifdef USE
-
-#	include <GL/gl.h>
-
-// txc_dxtn.h is not included in the libtxc_dxtn package of common Linux distributions
-// and there is no libtxc_dxtn-devel package (on Fedora), but I only need one function anyway.
-// See: http://cgit.freedesktop.org/~mareko/libtxc_dxtn/
-
-/*!
- * destFormat values:
- *   GL_COMPRESSED_RGB_S3TC_DXT1_EXT
- *   GL_COMPRESSED_RGBA_S3TC_DXT1_EXT
- *   GL_COMPRESSED_RGBA_S3TC_DXT3_EXT
- *   GL_COMPRESSED_RGBA_S3TC_DXT5_EXT
- *
- */
-
-extern "C" {
-	void tx_compress_dxtn(GLint srccomps, GLint width, GLint height,
-						  const GLubyte *srcPixData, GLenum destformat,
-						  GLubyte *dest, GLint dstRowStride);
-}
-
+#ifdef USE_STB_DXT
+#	include <cstring>
+#	define STB_DXT_IMPLEMENTATION
+#	include "stb_dxt.h"
 #endif
 
 using namespace VTFLib;

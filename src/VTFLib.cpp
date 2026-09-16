@@ -336,3 +336,4 @@ VTFLIB_API vlVoid vlSetFloat(VTFLibOption Option, vlSingle sValue)
 		break;
 	}
 }
+
