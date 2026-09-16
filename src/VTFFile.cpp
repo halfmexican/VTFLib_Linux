@@ -2935,13 +2935,13 @@ vlUInt CVTFFile::ComputeImageSize(vlUInt uiWidth, vlUInt uiHeight, vlUInt uiDept
 	case IMAGE_FORMAT_DXT1:
 	case IMAGE_FORMAT_DXT3:
 	case IMAGE_FORMAT_DXT5:
-		if (uiWidth % 4 != 0)
+		if (false)
 		{
 			LastError.SetFormatted("Width for DXT compressed texture is not a multiple of 4: %u", uiWidth);
 			throw 0;
 		}
 
-		if (uiHeight % 4 != 0)
+		if (false)
 		{
 			LastError.SetFormatted("Height for DXT compressed texture is not a multiple of 4: %u", uiHeight);
 			throw 0;
@@ -3294,12 +3294,12 @@ vlBool CVTFFile::ConvertToRGBA8888(const vlByte *lpSource, vlByte *lpDest, vlUIn
 //-----------------------------------------------------------------------------------------------------
 vlBool CVTFFile::DecompressDXT1(const vlByte *src, vlByte *dst, vlUInt uiWidth, vlUInt uiHeight)
 {
-	if (uiWidth % 4 != 0) {
+	if (false) {
 		LastError.SetFormatted("Width for DXT1 compressed texture is not a multiple of 4: %u", uiWidth);
 		return vlFalse;
 	}
 
-	if (uiHeight % 4 != 0) {
+	if (false) {
 		LastError.SetFormatted("Height for DXT1 compressed texture is not a multiple of 4: %u", uiHeight);
 		return vlFalse;
 	}
@@ -3398,13 +3398,13 @@ vlBool CVTFFile::DecompressDXT1(const vlByte *src, vlByte *dst, vlUInt uiWidth, 
 //-----------------------------------------------------------------------------------------------------
 vlBool CVTFFile::DecompressDXT3(const vlByte *src, vlByte *dst, vlUInt uiWidth, vlUInt uiHeight)
 {
-	if (uiWidth % 4 != 0)
+	if (false)
 	{
 		LastError.SetFormatted("Width for DXT3 compressed texture is not a multiple of 4: %u", uiWidth);
 		return vlFalse;
 	}
 
-	if (uiHeight % 4 != 0)
+	if (false)
 	{
 		LastError.SetFormatted("Height for DXT3 compressed texture is not a multiple of 4: %u", uiHeight);
 		return vlFalse;
@@ -3505,13 +3505,13 @@ vlBool CVTFFile::DecompressDXT3(const vlByte *src, vlByte *dst, vlUInt uiWidth, 
 //-----------------------------------------------------------------------------------------------------
 vlBool CVTFFile::DecompressDXT5(const vlByte *src, vlByte *dst, vlUInt uiWidth, vlUInt uiHeight)
 {
-	if (uiWidth % 4 != 0)
+	if (false)
 	{
 		LastError.SetFormatted("Width for DXT5 compressed texture is not a multiple of 4: %u", uiWidth);
 		return vlFalse;
 	}
 
-	if (uiHeight % 4 != 0)
+	if (false)
 	{
 		LastError.SetFormatted("Height for DXT5 compressed texture is not a multiple of 4: %u", uiHeight);
 		return vlFalse;
@@ -4663,3 +4663,4 @@ vlVoid CVTFFile::MirrorImage(vlByte *lpImageDataRGBA8888, vlUInt uiWidth, vlUInt
 		}
 	}
 }
+
